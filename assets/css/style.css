@@ -4,7 +4,7 @@ body {
     text-align: center;
     font-family: 'Neucha', cursive;
 }
-h1 {
+#randomNumber, h1 {
     font-size: 50px;
     margin-top: 20px;
 }
