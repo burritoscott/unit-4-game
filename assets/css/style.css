@@ -1,0 +1,17 @@
+body {
+    background: url(../images/cloudy-day.png);
+    background-attachment: fixed;
+    text-align: center;
+    font-family: 'Neucha', cursive;
+}
+h1 {
+    font-size: 50px;
+    margin-top: 20px;
+}
+#result, #score {
+    font-size: 40px;
+}
+.jewels {
+    border: 4px, darkblue, solid;
+
+}
