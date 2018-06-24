@@ -1,8 +1,8 @@
 
 var wins = 0;
 var losses = 0;
-var randomNum, greenNum, pinkNum, purpleNum, yellowNum, randomNumDis, yourScore;
-
+var randomNum, greenNum, pinkNum, purpleNum, yellowNum, randomNumDis, score;
+var resule = $("#result");
 //generate a random number to guess and display it btwn 19-120
 function getRandomNum(min, max) {
     randomNum = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
@@ -22,16 +22,33 @@ function getRandomNum(min, max) {
     $('#pinkJewel').data('num', pinkNum);
     $('#purpleJewel').data('num', purpleNum);
     $('#yellowJewel').data('num', yellowNum);
-
+}
 //make images clickable using their individual IDs
 
     $(".jewels").on("click", function(){
         score = $(this).data("num"); 
         $("#score").text(score);
+
+//code to add the score to a number that's already existing in the #score area - May combine with if/else
+
+
+
+//if the score goes over the randomNum then you lose - losses++, if score==randomNum then wins++
+        if(score == randomNum){
+            wins++;
+            result.text("YA WON!");
+        }else if(score > randomNum){
+            losses++;
+            result.text("YA SUCK!  Try again.");
+        }else{
+            console.log(score);
+        }
+
+//code for wins and losses to appear on the document
+        $("#wins").text(wins);
+        $("#losses").text(losses);
+        
     });
 
-}
 
-// //create a counter for wins and losses
-// //
 getRandomNum();
