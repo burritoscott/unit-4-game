@@ -16,22 +16,20 @@ function getRandomNum(min, max) {
     purpleNum = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
     yellowNum = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
 
+//attach number to jewel...
+
+    $('#greenJewel').data('num', greenNum);
+    $('#pinkJewel').data('num', pinkNum);
+    $('#purpleJewel').data('num', purpleNum);
+    $('#yellowJewel').data('num', yellowNum);
+
 //make images clickable using their individual IDs
 
     $(".jewels").on("click", function(){
-        yourScore = $(this).val(Math.floor(Math.random() * (12 - 1 + 1)) + 1);
-        yourScoreDis = $("#score");
-        yourScoreDis.text(yourScore);
-        
+        score = $(this).data("num"); 
+        $("#score").text(score);
     });
 
-    if (yourScore == randomNum){
-        wins ++;
-    }else if(yourScore > randomNum){
-        losses ++;
-    }else{
-        //add value of next click to current score
-    }
 }
 
 // //create a counter for wins and losses
