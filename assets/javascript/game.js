@@ -1,8 +1,9 @@
 
 var wins = 0;
 var losses = 0;
+var counter = 0;
 var randomNum, greenNum, pinkNum, purpleNum, yellowNum, randomNumDis, score;
-var resule = $("#result");
+var result = $("#result");
 //generate a random number to guess and display it btwn 19-120
 function getRandomNum(min, max) {
     randomNum = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
@@ -30,16 +31,18 @@ function getRandomNum(min, max) {
         $("#score").text(score);
 
 //code to add the score to a number that's already existing in the #score area - May combine with if/else
-
+        counter = 0;
+        $("#score").text(counter);
+        counter = counter + parseInt($(this).data("num"));
 
 
 //if the score goes over the randomNum then you lose - losses++, if score==randomNum then wins++
         if(score == randomNum){
             wins++;
-            result.text("YA WON!");
+            result.text("YA WON, WOMAN!");
         }else if(score > randomNum){
             losses++;
-            result.text("YA SUCK!  Try again.");
+            result.text("Such a disappointment...  Try again.");
         }else{
             console.log(score);
         }
